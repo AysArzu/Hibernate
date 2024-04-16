@@ -24,19 +24,20 @@ public class RunnerSave03 {
         student3.setName("Asim");
         student3.setGrade(100);
 
-        Diary diary1 = new Diary();
+        Diary03 diary1 = new Diary03();
         diary1.setId(101);
         diary1.setName("Ahmet's diary");
         diary1.setStudent(student1);
 
-        Diary diary2 = new Diary();
+        Diary03 diary2 = new Diary03();
         diary2.setId(102);
         diary2.setName("Fatma's diary");
         diary2.setStudent(student2);
 
         Configuration con = new Configuration().
                 configure("hibernate.cfg.xml").
-                addAnnotatedClass(Student03.class).addAnnotatedClass(Diary.class);
+                addAnnotatedClass(Student03.class)
+                .addAnnotatedClass(Diary03.class);
 
         SessionFactory sf = con.buildSessionFactory();
         Session session = sf.openSession();

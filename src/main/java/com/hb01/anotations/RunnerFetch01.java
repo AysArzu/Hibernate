@@ -76,13 +76,14 @@ public class RunnerFetch01 {
         sf.close();
 
         //!!! get - SQL - HQL Hangisini tercih etmem gerekir?
-         /*          *1. get
+         /*         * 1. get
                     * 2. HQL
                     * 3. SQL
-               *   Native SQL hizli olsada eksi yonleri :
-                1) bazi DB'lerde sql syntax'in farkliliklar olabiliyor, Native SQL burada sorun olabilir
-                2) String yapilarin hataya acik olmasi
-                    **/
+          *   Native SQL hizli olsada eksi yonleri :
+              1) bazi DB'lerde sql syntax'in farkliliklar olabiliyor, Native SQL burada sorun olabilir
+              2) String yapilarin hataya acik olmasi
+
+           */
 
     }
 }

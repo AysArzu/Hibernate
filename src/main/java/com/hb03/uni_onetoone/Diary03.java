@@ -3,7 +3,7 @@ package com.hb03.uni_onetoone;
 import javax.persistence.*;
 
 @Entity
-public class Diary {
+public class Diary03 {
     @Id
     private int id;
 
@@ -11,7 +11,7 @@ public class Diary {
 
     @OneToOne
     @JoinColumn(name = "std_id")//Diary tablosunda ilişkili student_id yi
-    // saklayacak kolon'un ismini std_id olarak değiştirdim .
+    // saklayacak column'un ismini std_id olarak değiştirdim .
     // ( olusacak kolonun Default değeri : student_id )
     private Student03 student; // student_id
 
@@ -41,7 +41,7 @@ public class Diary {
         this.student = student;
     }
 
-    // Not: toString() ***************************************8
+    // Not: toString() ***************************************
 
     @Override
     public String toString() {

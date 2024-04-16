@@ -44,7 +44,7 @@ public class Student02 {
         this.grade = grade;
     }
 
-    public Address getAddress() {
+    public Address  getAddress() {
         return address;
     }
 
