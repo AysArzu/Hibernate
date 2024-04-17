@@ -30,23 +30,27 @@ public class RunnerFetch04 {
         System.out.println(diary.getStudent());
         System.out.println("*******************************************************");*/
 
-//        // Task = Diary si olan Ogrencilerin isimlerini ve gunluklerinin isimlerini getirelim :
-//        String hqlQuery = "SELECT s.name,d.name FROM Student04 s INNER JOIN FETCH Diary04 d ON s.id=d.student";
-//        //Native SQL---> "SELECT s.std_name,d.name FROM Student04 s INNER JOIN Diary04 d ON s.id=d.std_id";
-//        List<Object[]> resultList1 = session.createQuery(hqlQuery).getResultList();
-//        for (Object[] objects : resultList1) {
-//            System.out.println(Arrays.toString(objects));
-//        }
-//        resultList1.forEach(t -> System.out.println(Arrays.toString(t)));
+        // Task = Diary si olan Ogrencilerin isimlerini ve gunluklerinin isimlerini getirelim :
+        String hqlQuery = "SELECT s.name,d.name FROM Student04 s INNER JOIN FETCH Diary04 d ON s.id=d.student";
+        //Native SQL---> "SELECT s.std_name,d.name FROM Student04 s INNER JOIN Diary04 d ON s.id=d.std_id";
+        List<Object[]> resultList1 = session.createQuery(hqlQuery).getResultList();
+        for (Object[] objects : resultList1) {
+            System.out.println(Arrays.toString(objects));
+        }
+        resultList1.forEach(t -> System.out.println(Arrays.toString(t)));
 
 
-        //!!! TASK : bütün öğrenciler ve varsa bu ogrencilerin kitaplarini da getirelim
+       // !!! TASK : bütün öğrenciler ve varsa bu ogrencilerin gunlukleri da getirelim(ogrenci ismi ve gunluk ismi ekrana yazilacak)
 
-        String hqlQuery2 = "Select s.name,d.name from Student04 s left join fetch Diary04 d on s.id=d.student";
+        String hqlQuery2 = "SELECT s.name,d.name from Student04 s LEFT JOIN FETCH Diary04 d ON s.id=d.student";
 
-        List<Object[]> resultList = session.createQuery(hqlQuery2).getResultList();
-        resultList.forEach(t-> System.out.println(Arrays.toString(t)));
+        List<Object[]> resultList2 = session.createQuery(hqlQuery2).getResultList();
+        resultList2.forEach(t-> System.out.println(Arrays.toString(t)));
 
+        // TASK : butun ogrenci ve diary bilgilerini getiriyoruz
+        String hqlQuery3= "SELECT s.name,d.name from Student04 s FULL JOIN FETCH Diary04 d ON s.id=d.student";
+        List<Object[]> resultList3 = session.createQuery(hqlQuery3).getResultList();
+        resultList3.forEach(t-> System.out.println(Arrays.toString(t)));
 
         tx.commit();
         session.close();
