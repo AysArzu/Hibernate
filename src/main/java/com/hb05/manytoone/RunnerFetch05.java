@@ -21,7 +21,7 @@ public class RunnerFetch05 {
 
         //!!! TASK : 1 id li üniversiteye giden bütün öğrencileri bulalım
         University uni = session.get(University.class,1);
-       String hqlQuery = "FROM Student05 s WHERE s.university=1";
+       String hqlQuery = "FROM Student05 s WHERE s.university.id=1";
         List<Student05> resultList = session.createQuery(hqlQuery,Student05.class).getResultList();
         resultList.forEach(System.out::println);
 

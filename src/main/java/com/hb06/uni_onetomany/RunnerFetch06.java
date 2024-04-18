@@ -5,9 +5,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class RunnerFetch06 {
     public static void main(String[] args) {
 

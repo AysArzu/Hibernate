@@ -17,8 +17,8 @@ public class Student06 {
     // !!! yukardaki @JoinColumn eklenmezse ---> @JoinTable yapar otomatik olarak
     // @JoinTable-->  ayrı bir tablo oluşturuyor ve
     // tabloda 2 kolon oluyor sadece biri student_id diğeri book_id fakat
-    // oneToMany için @JoinClumn daha kullanışlı çünki ekstra tablo
-    // oluşturmak fetch leme işlemlerinde extra sql query lerin oluşmasına sebeb oluyor
+    // oneToMany için @JoinColumn daha kullanışlı çünkü ekstra tablo
+    // oluşturmak fetch leme işlemlerinde extra sql query lerin oluşmasına sebep oluyor
     // !!! Trick Önemli :normalde yeni oluşacak kolon Student06 tablosunda olması lazım ama bu yapıda
     // Book06 tablosunda oluşturuluyor, oneToMany veya ManyToOne gibi yapılarda Hibernate,
     // ilişkiyi daha rahat takip edebilmek için , yeni oluşacak kolonu Many tarafında oluşturur.
