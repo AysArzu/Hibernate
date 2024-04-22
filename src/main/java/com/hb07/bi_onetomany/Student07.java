@@ -15,7 +15,8 @@ public class Student07 {
 
     private int grade;
 
-    @OneToMany(mappedBy = "student",cascade = CascadeType.REMOVE,orphanRemoval = true)//ikisi de ayni isi yapiyor. once gidip childi siliyor sonra parenti siliyor
+    @OneToMany(mappedBy = "student",cascade = CascadeType.REMOVE,orphanRemoval = true)//ikisi de ayni isi yapiyor.
+    // once gidip childi siliyor sonra parenti siliyor
     //!!! Trick :Cascade.Remove ve OrphanRemoval arasındaki fark :   CascadeType.REMOVE varsa,
     //  eğer parent(Student) nesne silinirse, child/dependent(Book) nesne de silinir.
     //  Ancak bu seçenek child(Book) nesneye null değeri atarsak veya başka bir child
@@ -23,7 +24,7 @@ public class Student07 {
     //  degiskeni null yaparsaniz, gider child nesnesini de siler bunu GarbageCollector da yapiyor aslinda
     //!!! OrphanRemoval veya CascadeType.REMOVE nerede kullanilir? Musteri var ve musterinin ileriye donuk 10
     // tane siparisi var, musteri silinirse siparisleride silinsin isterim
-    //!!! nerede kullanilmaz ?  Ogrenciyi sildigimde ogrencinin aldigi butun derslerde DB den silinr ve bu
+    //!!! nerede kullanilmaz ?  Ogrenciyi sildigimde ogrencinin aldigi butun derslerde DB den silinir ve bu
     // istenmeyen bir durumdur
     private List<Book07> bookList= new ArrayList<>();
 

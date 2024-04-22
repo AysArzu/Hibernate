@@ -16,6 +16,7 @@ private int id;
     @ManyToMany(mappedBy = "bookList")
     private List<Student08> students = new ArrayList<>();
 
+    //getter - setter *****************************
     public int getId() {
         return id;
     }
@@ -40,6 +41,7 @@ private int id;
         this.students = students;
     }
 
+    //toString()  *****************************
     @Override
     public String toString() {
         return "Book08{" +
